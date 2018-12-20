@@ -86,5 +86,86 @@ class Japanese < Human
 	end
 end
 
-matz = Japanese.new("まつもとゆきひろ")
-matz.greet
+# matz = Japanese.new("まつもとゆきひろ")
+# matz.greet
+
+class Example
+	def i_method
+		puts "instance method"
+	end
+	def self.c_method
+		puts "class method"
+	end
+end
+
+instance = Example.new
+# Example.c_method
+# instance.i_method
+# Example.i_method	# => Error
+# instance.c_method	# => Error
+
+# CONSTANT = 100
+# CONSTANT = 200
+
+# def teisu
+# 	CONST = 0
+# end
+# teisu
+
+# x = 100
+# 5.times do | x |
+# 	puts "x = #{ x }, object_id = #{ x.object_id }"
+# end
+# puts x
+
+# begin
+# 	1 / 0
+# rescue => err
+# 	puts err
+# end
+
+# File.open("./test.txt", "r") do |f|
+# 	f.each_line do | l |
+# 		puts l
+# 	end
+# end
+# File.open("./test.txt", "w") do |f|
+# 	f.puts "hogehoge"
+# end
+# File.open("./test.txt", "r") do |f|
+# 	f.each_line do | l |
+# 		puts l
+# 	end
+# end
+
+# buff = File.read("./test.txt")
+# File.open("./test.txt", "w") do |f|
+# 	buff.split("\n").each do | l |
+# 		f.puts l.gsub(/hoge/, "fuga")
+# 	end
+# end
+# File.open("./test.txt", "r") do |f|
+# 	f.each_line do | l |
+# 		puts l
+# 	end
+# end
+
+
+def isPrime(n)
+	if n < 2
+		return false
+	end
+	Math.sqrt(n).to_i.downto(2) do | i |
+		if n % i == 0
+			return false
+		end
+	end
+	true
+end
+
+# puts isPrime 252097800623
+# 100.times do | n |
+# 	if isPrime n
+# 		puts n
+# 	end
+# end
